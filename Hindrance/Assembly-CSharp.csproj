@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\TestPlayer.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/SODAM/sodam/Hindrance/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

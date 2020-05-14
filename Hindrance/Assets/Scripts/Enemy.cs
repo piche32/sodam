@@ -36,16 +36,6 @@ public class Enemy : MonoBehaviour
         if (isReverse == true) ReverseEnemy();
     }
 
-    // 충돌체크 X 수정해야함
-    private void OnTriggerEnter(Collider other)     // 플레이어 충돌시
-    {
-        if(other.tag == "Player")
-        {
-            Debug.Log("플레이어 체력이 감소됨");
-            // 플레이어 체력 감소
-        }
-    }
-
     void Moving()  // 이동 함수
     {
         if (isDirection == true)
