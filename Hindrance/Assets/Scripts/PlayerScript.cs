@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    [SerializeField] float speed = 1.0f;
+    [SerializeField] float speed = 0.03f; //나중에 시간이 오래 지날수록 늘리기
     [SerializeField] float jumpPower = 400.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -22,11 +22,12 @@ public class PlayerScript : MonoBehaviour
     {
         move();
     }
+    
 
-    private void move()
+    private void move() //앞으로 움직이기
     {
-        //앞으로 움직이기(수정: 카메라 움직임 만들 때 활성화 시켜주기)
-        //  gameObject.transform.Translate(new Vector3(speed, 0.0f, 0.0f));
+        gameObject.transform.Translate(new Vector3(speed, 0.0f, 0.0f));
+
     }
 
     private void OnCollisionEnter(Collision collision)
