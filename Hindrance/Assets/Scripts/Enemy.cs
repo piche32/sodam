@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject enemy;  // 테스트용 방해물
 
     public int speed = 1;  // 움직이는 방해물 속도
+    private int tmpSpeed;  // 속도 저장 변수
 
     public float rightMax = 2.0f;   // 좌우 이동 최대값
     public float leftMax = -2.0f;    
@@ -18,22 +19,15 @@ public class Enemy : MonoBehaviour
 
     public bool isMoving = false;      // 움직이는지
     public bool isStop = false;        // 스탑키에 영향을 받는지  
-    public bool isReverse = false;     // 리버스키에 영향을 받는지
-
-    private bool isPause = false;   // 정지 상태 확인
 
     void Start()
     {
-
+        tmpSpeed = speed;
     }
 
     void Update()
     {
         if(isMoving == true) Moving();
-
-        if(isStop == true) StopMoving();
-
-        if (isReverse == true) ReverseEnemy();
     }
 
     void Moving()  // 이동 함수
@@ -66,30 +60,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void StopMoving()   // 스탑키 눌렸을때
+    public void BtDownStopKey()     // 스탑키 눌렸을때
     {
-        if (isStop == true)
+        if(isStop == true)
         {
-            if (Input.GetKeyDown(KeyCode.T))   //테스트용
-            {
-                if (isPause == false)
-                {
-                    Time.timeScale = 0;     // 정지
-                    isPause = true;
-                    return;
-                }
-                else if (isPause == true)
-                {
-                    Time.timeScale = 1;     // 정지 비활성화
-                    isPause = false;
-                    return;
-                }
-            }
+            speed = 0;      
         }
     }
 
-    void ReverseEnemy()   // 리버스키 눌렸을때
+    public void BtUpStopKey()
     {
-        Debug.Log("리버스키 눌림");
+        speed = tmpSpeed;   // 속도 원상 복귀시키기
     }
 }

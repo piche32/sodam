@@ -6,10 +6,11 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float speed = 1.0f;
     [SerializeField] float jumpPower = 400.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
