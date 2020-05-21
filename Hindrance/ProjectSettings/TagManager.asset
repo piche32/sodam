@@ -9,6 +9,7 @@ TagManager:
   - ReverseKeyEnemy
   - Ground
   - Ceiling
+  - Coin
   layers:
   - Default
   - TransparentFX
