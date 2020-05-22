@@ -5,8 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - MovingEnemy
-  - ReverseKeyEnemy
   - Ground
   - Ceiling
   - Coin
