@@ -733,10 +733,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5579161919090413174, guid: c072377bb475e004fb030e8c40df969e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952243948783244179, guid: c072377bb475e004fb030e8c40df969e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8514205881650608864, guid: c072377bb475e004fb030e8c40df969e,
         type: 3}
       propertyPath: m_Name
       value: Magnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514205881650608864, guid: c072377bb475e004fb030e8c40df969e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c072377bb475e004fb030e8c40df969e, type: 3}
@@ -2494,3 +2509,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1869219233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2055433887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8514205881650608864, guid: c072377bb475e004fb030e8c40df969e,
+    type: 3}
+  m_PrefabInstance: {fileID: 677559081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2055433888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055433887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86f6244ffbcecc499689595e3208b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 10
+  speed: 6
+  dist: 10

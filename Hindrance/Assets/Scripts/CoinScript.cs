@@ -18,9 +18,9 @@ public class CoinScript : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collider.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             UImanager.GetComponent<UIManagerScript>().Score += coinScore;
             Destroy(this.gameObject);
