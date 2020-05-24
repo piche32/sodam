@@ -21,13 +21,13 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         move();
+
     }
-    
+
 
     private void move() //앞으로 움직이기
     {
         gameObject.transform.Translate(new Vector3(speed, 0.0f, 0.0f));
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,17 +41,18 @@ public class PlayerScript : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down * jumpPower);
         }
     }
+    
 
-    public void jumpBtDown()
+    public void stopBtDown()
     {
-        //점프 버튼 눌렀을 때 정지
-        gameObject.GetComponent<Rigidbody>().Sleep();
+        //stop 버튼 눌렀을 때 정지
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    public void jumpBtUp()
+    public void stopBtUp()
     {
-        //점프 버튼을 떼면 무조건 떨어짐.. 중력만 받아서 그런듯(수정??)
-        gameObject.GetComponent<Rigidbody>().WakeUp();
+        //stop 버튼을 떼면 무조건 떨어짐.. 중력만 받아서 그런듯(수정??)
+        gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     public void reverseBtDown()
