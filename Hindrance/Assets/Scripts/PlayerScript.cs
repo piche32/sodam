@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float speed = 0.03f; //나중에 시간이 오래 지날수록 늘리기
     [SerializeField] float jumpPower = 400.0f;
 
+    static public int Hp = 100;    // 임시 체력 변수
+
     // Start is called before the first frame update
     void Start()
     {
