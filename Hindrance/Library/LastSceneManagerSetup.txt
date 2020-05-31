@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/CHERRY BLOSSOM/Sample Scenes/setting_scene.unity
+- path: Assets/Scenes/MainGame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
