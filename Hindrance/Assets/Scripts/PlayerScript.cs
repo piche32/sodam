@@ -43,9 +43,13 @@ public class PlayerScript : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down * jumpPower);
         }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Hp -= 10;
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
+        }
     }
     
-
     public void stopBtDown()
     {
         //stop 버튼 눌렀을 때 정지
@@ -67,4 +71,6 @@ public class PlayerScript : MonoBehaviour
     {
         Physics.gravity = Vector3.down * 9.8f;
     }
+
+   
 }

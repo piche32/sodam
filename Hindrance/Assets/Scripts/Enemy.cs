@@ -14,10 +14,10 @@ public class Enemy : MonoBehaviour
     //플레이어 스크립트에 작성하는게 나을것 같음! 임시
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        /*if (other.gameObject.tag == "Player")
         {
             PlayerScript.Hp -= 10;
             Debug.Log("Hp: " + PlayerScript.Hp);
-        }
+        }*/
     }
 }
