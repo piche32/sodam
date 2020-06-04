@@ -12,7 +12,7 @@ public class MoveEnemy : MonoBehaviour
     public float topMax = 0f;     // 상하 이동 최대값
     public float bottomMax = 0f;
 
-    public bool isTopBotton = true;    // 이동 방향 결정 true: 상하 flase: 좌우
+    public bool isTopBottom = true;    // 이동 방향 결정 true: 상하 flase: 좌우
     public int dir = 1;                // 방향 바꾸기  1이면 아래, 왼쪽으로 -1이면 위, 오른쪽으로
 
     public bool isStop = false;        // 스탑키에 영향을 받는지  
@@ -30,7 +30,7 @@ public class MoveEnemy : MonoBehaviour
 
     void Moving()  // 이동 함수
     {
-        if (isTopBotton == true)
+        if (isTopBottom == true)
         {
             if (gameObject.transform.position.y >= topMax)
             {
