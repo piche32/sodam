@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManagerScript : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class UIManagerScript : MonoBehaviour
 
     [SerializeField] GameObject option = null;
     [SerializeField] GameObject setting = null;
-    float score; //다른 곳에서 score를 관리하면 없애주기
-    public float Score { get { return score; } set { score = value; } }
+    [SerializeField] GameObject result = null;
+
+    [SerializeField] TextMeshProUGUI resultText = null;
 
     private static bool isPause;
     public static bool IsPause { get { return isPause; } set { isPause = value; } }
@@ -21,14 +23,14 @@ public class UIManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0.0f;
+       dataScript.Score = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "SCORE: " + score.ToString();
-        HPText.text = "HP: " + PlayerScript.Hp;
+        scoreText.text = "SCORE: " + dataScript.Score.ToString();
+        HPText.text = "HP: " + dataScript.HP;
 
         menuCtrl();
 
@@ -40,6 +42,8 @@ public class UIManagerScript : MonoBehaviour
         {
             Time.timeScale = 1.0f;
         }
+
+        resultCtrl();
 
     }
 
@@ -53,6 +57,18 @@ public class UIManagerScript : MonoBehaviour
                 SoundManagerScript.instance.UISound(true);
 
             }
+        }
+        return;
+    }
+
+    public void resultCtrl()
+    {
+        if (dataScript.HP > 0) return;
+        if (!option.activeSelf && !setting.activeSelf && !result.activeSelf)
+        {
+            isPause = true;
+            result.SetActive(true);
+            resultText.text = dataScript.Score.ToString();
         }
         return;
     }

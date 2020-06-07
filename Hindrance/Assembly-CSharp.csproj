@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\BackGround.cs" />
     <Compile Include="Assets\Scripts\CameraMoveScript.cs" />
     <Compile Include="Assets\Scripts\CoinScript.cs" />
+    <Compile Include="Assets\Scripts\dataScript.cs" />
     <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\MagnetScript.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\MiddleGround.cs" />
     <Compile Include="Assets\Scripts\MoveEnemy.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\ResultScript.cs" />
     <Compile Include="Assets\Scripts\ReverseEnemy.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
     <Compile Include="Assets\Scripts\StartScript.cs" />

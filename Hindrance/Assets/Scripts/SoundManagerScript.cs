@@ -18,7 +18,7 @@ public class SoundManagerScript : MonoBehaviour
     [SerializeField] AudioClip openSound = null;
     [SerializeField] AudioClip closeSound = null;
 
-    [SerializeField] AudioClip jumpSound = null;
+   // [SerializeField] AudioClip jumpSound = null;
     [SerializeField] AudioClip coinSound = null;
     [SerializeField] AudioClip attackedSound = null;
     [SerializeField] AudioClip clickSound = null;

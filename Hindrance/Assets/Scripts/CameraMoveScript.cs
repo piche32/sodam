@@ -9,7 +9,7 @@ public class CameraMoveScript : MonoBehaviour
 {
     Vector3 pos;
     Vector3 playerPos;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject player = null;
     [SerializeField] float maxDistance = 10.0f; //플레이어와 카메라의 최대 거리
     [SerializeField] float cameraSpeed = 0.04f; //플레이어의 속도에 변화가 생긴다면 다시 고민하기
 
