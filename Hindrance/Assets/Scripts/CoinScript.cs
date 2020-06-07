@@ -23,6 +23,7 @@ public class CoinScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             UImanager.GetComponent<UIManagerScript>().Score += coinScore;
+            SoundManagerScript.instance.coinSoundCtrl();
             Destroy(this.gameObject);
         }
     }

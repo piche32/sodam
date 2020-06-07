@@ -38,14 +38,18 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower);
+            SoundManagerScript.instance.playerSoundCtrl();
         }
         if (collision.gameObject.tag == "Ceiling")
         {
             gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down * jumpPower);
+            SoundManagerScript.instance.playerSoundCtrl();
+
         }
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             Hp -= 10;
+            SoundManagerScript.instance.attackedSoundCtrl();
             collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
         }
     }

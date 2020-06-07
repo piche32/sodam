@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManagerScript : MonoBehaviour
 {
-    [SerializeField] Text scoreText;
-    [SerializeField] Text HPText;
+    [SerializeField] Text scoreText= null;
+    [SerializeField] Text HPText = null;
 
     [SerializeField] GameObject option = null;
     [SerializeField] GameObject setting = null;
@@ -16,22 +16,12 @@ public class UIManagerScript : MonoBehaviour
 
     private static bool isPause;
     public static bool IsPause { get { return isPause; } set { isPause = value; } }
-
-    [SerializeField] AudioSource bgm = null;
-    Toggle bgmToggle;
-
-    [SerializeField] AudioSource effectSound = null;
-    Toggle effectSoundToggle = null;
-
-    [SerializeField]AudioClip openSound = null;
-    [SerializeField]AudioClip closeSound = null;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         score = 0.0f;
-        bgmToggle = null;
-        effectSoundToggle = null;
     }
 
     // Update is called once per frame
@@ -60,8 +50,8 @@ public class UIManagerScript : MonoBehaviour
             if (!option.activeSelf&&!setting.activeSelf) {
                 isPause = true;
                 option.SetActive(true);
-                effectSound.clip = openSound;
-                effectSound.Play();
+                SoundManagerScript.instance.UISound(true);
+
             }
         }
         return;
@@ -73,8 +63,8 @@ public class UIManagerScript : MonoBehaviour
         {
             isPause = false;
             option.SetActive(false);
-            effectSound.clip = closeSound;
-            effectSound.Play();
+            SoundManagerScript.instance.UISound(false);
+
         }
     }
 
@@ -83,10 +73,7 @@ public class UIManagerScript : MonoBehaviour
     {
         option.SetActive(false);
         setting.SetActive(true);
-        bgmToggle = GameObject.Find("bgmToggle").GetComponent<Toggle>();
-        effectSoundToggle = GameObject.Find("EffectSoundToggle").GetComponent<Toggle>();
-        effectSound.clip = openSound;
-        effectSound.Play();
+      SoundManagerScript.instance.UISound(true);
         return;
     }
 
@@ -94,8 +81,8 @@ public class UIManagerScript : MonoBehaviour
     {
         setting.SetActive(false);
         isPause = false;
-        effectSound.clip = closeSound;
-        effectSound.Play();
+        SoundManagerScript.instance.UISound(false);
+
     }
 
     public void restartBT()
@@ -108,19 +95,7 @@ public class UIManagerScript : MonoBehaviour
         SceneManager.LoadScene("Start"); //나중에 바꿔주기
     }
 
-    public void bgmCtrl()
-    {
-        if (bgm == null) return;
-        if (bgmToggle == null) return;
-        if (bgmToggle.isOn) bgm.Play();
-        else bgm.Stop();
-    }
+  
 
-    public void effectSoundCtrl()
-    {
-        if (effectSound == null) return;
-        if (effectSoundToggle == null) return;
-        if (effectSoundToggle.isOn) effectSound.mute = false;
-        else effectSound.mute = true;
-    }
+   
 }
