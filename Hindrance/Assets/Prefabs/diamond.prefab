@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9090635534063380698}
   - component: {fileID: 7129176834080041102}
   - component: {fileID: 9152298246376033340}
+  - component: {fileID: -5687713157752970234}
   m_Layer: 0
   m_Name: diamond
   m_TagString: Coin
@@ -107,3 +108,15 @@ CapsuleCollider:
   m_Height: 0.77083445
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5687713157752970234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113331223851001654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d0fe6aa425138498975542a5ad04a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

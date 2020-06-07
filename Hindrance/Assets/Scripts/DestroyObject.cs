@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour      // 적을 포함한 땅 삭제 포함시키기
+public class DestroyObject : MonoBehaviour      // 적을 포함한 땅 삭제 포함시키기
 {
     void Update()
     {
