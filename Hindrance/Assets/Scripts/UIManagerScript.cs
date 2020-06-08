@@ -7,7 +7,7 @@ using TMPro;
 
 public class UIManagerScript : MonoBehaviour
 {
-    [SerializeField] Text scoreText= null;
+    //[SerializeField] Text scoreText= null;
     [SerializeField] Text HPText = null;
 
     [SerializeField] GameObject option = null;
@@ -15,6 +15,7 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField] GameObject result = null;
 
     [SerializeField] TextMeshProUGUI resultText = null;
+    [SerializeField] TextMeshProUGUI scoreText = null;
 
     private static bool isPause;
     public static bool IsPause { get { return isPause; } set { isPause = value; } }
@@ -29,7 +30,7 @@ public class UIManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "SCORE: " + dataScript.Score.ToString();
+        scoreText.text = dataScript.Score.ToString();
         HPText.text = "HP: " + dataScript.HP;
 
         menuCtrl();

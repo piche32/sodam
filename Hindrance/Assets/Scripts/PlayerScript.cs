@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         move();
-
+        isPlayerAlive();
     }
 
 
@@ -75,5 +75,14 @@ public class PlayerScript : MonoBehaviour
         Physics.gravity = Vector3.down * 9.8f;
     }
 
-   
+    void isPlayerAlive() //Player가 카메라 밖으로 나가면 죽음
+    {
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        Debug.Log(pos);
+        if (pos.x < -1.0f) dataScript.HP = 0;
+        if (pos.x > 1.0f) dataScript.HP = 0;
+        if (pos.y < -1.0f) dataScript.HP = 0;
+        if (pos.y > 1.0f) dataScript.HP = 0;
+       
+       }
 }
