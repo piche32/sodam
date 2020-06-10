@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5380428969146701611}
   - component: {fileID: 767291521187978729}
   - component: {fileID: 640327836683911057}
-  - component: {fileID: 5963568657290644485}
   - component: {fileID: 2746471845760913685}
+  - component: {fileID: 8023556954765190050}
   m_Layer: 0
-  m_Name: moveEnemy
-  m_TagString: StopEnemy
+  m_Name: stopEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300038, guid: 1a08f9bec49c04809b03ba62a218b140, type: 3}
-  m_Color: {r: 1, g: 0.18396229, b: 0.18396229, a: 1}
+  m_Color: {r: 0.97019506, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.72, y: 0.77, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5963568657290644485
+--- !u!114 &2746471845760913685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326043958641791385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d0fe6aa425138498975542a5ad04a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8023556954765190050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,15 +128,3 @@ MonoBehaviour:
   bottomMax: 0
   isTopBottom: 1
   dir: 1
---- !u!114 &2746471845760913685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326043958641791385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d0fe6aa425138498975542a5ad04a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

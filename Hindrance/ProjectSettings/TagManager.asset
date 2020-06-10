@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Ceiling
   - Coin
+  - StopEnemy
   layers:
   - Default
   - TransparentFX
