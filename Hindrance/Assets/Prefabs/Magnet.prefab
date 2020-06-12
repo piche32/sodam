@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6952243948783244179}
   - component: {fileID: 5579161919090413174}
   - component: {fileID: 4125593882150091045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
