@@ -10,7 +10,9 @@ public class dataScript : MonoBehaviour
 
     private static float score;
     public static float Score { get { return score; } set { score = value; } }
-    // Start is called before the first frame update
+
+    public static int stage = 0;
+
     void Start()
     {
         hp = maxHp;   

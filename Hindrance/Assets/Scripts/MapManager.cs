@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] Stage;  
+
+    public void NextStage()
     {
-        
+        dataScript.stage += 1;
+
+        if(dataScript.stage > Stage.Length)
+        {
+            dataScript.stage = dataScript.stage % Stage.Length;
+            if(dataScript.stage == 0)
+            {
+                dataScript.stage = Stage.Length;
+            }
+        }
+
+        StartStage();
     }
 
-    // Update is called once per frame
-    void Update()
+    void StartStage()
     {
-        
+        for (int i = 1; i < Stage.Length; i++)
+        {
+            if (i == dataScript.stage)
+            {
+                Stage[i].SetActive(true);
+                Stage[i - 1].SetActive(false);
+            }
+        }
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\MapMove.cs" />
     <Compile Include="Assets\Scripts\MiddleGround.cs" />
     <Compile Include="Assets\Scripts\MoveEnemy.cs" />
+    <Compile Include="Assets\Scripts\NextStage.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\ResultScript.cs" />
     <Compile Include="Assets\Scripts\ReverseEnemy.cs" />

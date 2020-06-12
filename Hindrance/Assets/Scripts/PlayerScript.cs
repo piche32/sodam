@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour
         {
             dataScript.HP -= 10;
             SoundManagerScript.instance.attackedSoundCtrl();
-            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
+            //collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
         }
     }
     
