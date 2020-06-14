@@ -21,6 +21,7 @@ public class CoinScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             dataScript.Score += coinScore;
+            dataScript.HP += 2.0f;
             SoundManagerScript.instance.coinSoundCtrl();
             Destroy(this.gameObject);
         }

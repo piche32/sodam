@@ -8,7 +8,7 @@ using TMPro;
 public class UIManagerScript : MonoBehaviour
 {
     //[SerializeField] Text scoreText= null;
-    [SerializeField] Text HPText = null;
+    [SerializeField] Slider HPSlider = null;
 
     [SerializeField] GameObject option = null;
     [SerializeField] GameObject setting = null;
@@ -25,13 +25,15 @@ public class UIManagerScript : MonoBehaviour
     void Start()
     {
        dataScript.Score = 0.0f;
+        HPSlider.maxValue = dataScript.HPMax;
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = dataScript.Score.ToString();
-        HPText.text = "HP: " + dataScript.HP;
+        HPSlider.value = dataScript.HP;
+       // HPText.text = "HP: " + dataScript.HP;
 
         menuCtrl();
 

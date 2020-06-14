@@ -79,10 +79,9 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
         Debug.Log(pos);
-        if (pos.x < -1.0f) dataScript.HP = 0;
-        if (pos.x > 1.0f) dataScript.HP = 0;
-        if (pos.y < -1.0f) dataScript.HP = 0;
-        if (pos.y > 1.0f) dataScript.HP = 0;
-       
+        if (pos.x < -0.05f) dataScript.HP = 0;
+        if (pos.x > 1.05f) dataScript.HP = 0;
+        if (pos.y < -0.05f) dataScript.HP = 0;
+        if (pos.y > 1.05f) dataScript.HP = 0;
        }
 }
