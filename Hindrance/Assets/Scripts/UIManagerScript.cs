@@ -16,6 +16,7 @@ public class UIManagerScript : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI resultText = null;
     [SerializeField] TextMeshProUGUI scoreText = null;
+    [SerializeField] TextMeshProUGUI BestScoreText = null;
 
     private static bool isPause;
     public static bool IsPause { get { return isPause; } set { isPause = value; } }
@@ -72,6 +73,12 @@ public class UIManagerScript : MonoBehaviour
             isPause = true;
             result.SetActive(true);
             resultText.text = dataScript.Score.ToString();
+            if(dataScript.BestScore < dataScript.Score)
+            {
+                dataScript.BestScore = dataScript.Score;
+                Debug.Log(dataScript.BestScore);
+            }
+            BestScoreText.text = dataScript.BestScore.ToString();
         }
         return;
     }
@@ -106,12 +113,12 @@ public class UIManagerScript : MonoBehaviour
 
     public void restartBT()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("MainGame");
     }
 
     public void quitBT()
     {
-        SceneManager.LoadScene("Start"); //나중에 바꿔주기
+        SceneManager.LoadScene("Start");
     }
 
   

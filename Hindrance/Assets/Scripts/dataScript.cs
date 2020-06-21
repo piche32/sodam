@@ -13,13 +13,16 @@ public class dataScript : MonoBehaviour
     private static float score;
     public static float Score { get { return score; } set { score = value; } }
 
+    private static float bestScore = 0;
+    public static float BestScore { get { return bestScore; } set { bestScore = value; } }
+
     public static int stage = 0;
 
     float timer;
     void Start()
     {
         hpMax = MaxHP;
-        hp = hpMax; 
+        hp = hpMax;
     }
 
     // Update is called once per frame
