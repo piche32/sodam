@@ -114,10 +114,13 @@ public class UIManagerScript : MonoBehaviour
     public void restartBT()
     {
         SceneManager.LoadScene("MainGame");
+
+        isPause = false;
     }
 
     public void quitBT()
     {
+        isPause = false;
         SceneManager.LoadScene("Start");
     }
 

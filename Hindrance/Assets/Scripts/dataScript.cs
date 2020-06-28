@@ -6,7 +6,7 @@ public class dataScript : MonoBehaviour
 {
     private static float hp;
     public static float HP {  get { return hp; }  set { hp = value; } }
-    [SerializeField] float MaxHP = 1000.0f;
+    [SerializeField] float MaxHP = 100.0f;
     static float hpMax;
     public static float HPMax { get { return hpMax; } set { hpMax = value; } }
 
@@ -23,6 +23,7 @@ public class dataScript : MonoBehaviour
     {
         hpMax = MaxHP;
         hp = hpMax;
+        timer = 0.0f;
     }
 
     // Update is called once per frame

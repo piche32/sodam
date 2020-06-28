@@ -7,11 +7,12 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float speed = 0.03f; //나중에 시간이 오래 지날수록 늘리기
     [SerializeField] float jumpPower = 400.0f;
 
-    
-
+    float timer;
+    bool isHit = false;
     // Start is called before the first frame update
     void Start()
     {
+        timer = 5.0f;
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     {
         move();
         isPlayerAlive();
+        isUnbeatable();
     }
 
 
@@ -47,9 +49,29 @@ public class PlayerScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
+            if (isHit == true) return;
             dataScript.HP -= 10;
             SoundManagerScript.instance.attackedSoundCtrl();
-            //collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
+            isHit = true;
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
+        }
+
+        if (collision.gameObject.tag == "StopEnemy")
+        {
+            if (isHit == true) return;
+            dataScript.HP -= 15;
+            SoundManagerScript.instance.attackedSoundCtrl();
+            isHit = true;
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
+        }
+
+        if (collision.gameObject.tag == "ReserveEnemy")
+        {
+            if (isHit == true) return;
+            dataScript.HP -= 20;
+            SoundManagerScript.instance.attackedSoundCtrl();
+            isHit = true;
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
         }
     }
     
@@ -84,4 +106,12 @@ public class PlayerScript : MonoBehaviour
         if (pos.y < -0.05f) dataScript.HP = 0;
         if (pos.y > 1.05f) dataScript.HP = 0;
        }
+
+    void isUnbeatable()
+    {
+        if (isHit == false) return;
+        if (timer <= 0.0f) isHit = false;
+        timer--;
+        
+    }
 }
