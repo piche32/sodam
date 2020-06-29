@@ -36141,7 +36141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1038236044
 Transform:
   m_ObjectHideFlags: 0
@@ -70791,7 +70791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f261ad38c5afc1c4e9ce3c2a6f80cda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 1000
+  MaxHP: 100
 --- !u!4 &1985557543
 Transform:
   m_ObjectHideFlags: 0
@@ -71686,6 +71686,7 @@ GameObject:
   - component: {fileID: 2008663996}
   - component: {fileID: 2008663998}
   - component: {fileID: 2008663997}
+  - component: {fileID: 2008663999}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -71892,6 +71893,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   jumpPower: 200
+--- !u!95 &2008663999
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008663991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 999ebbf0d7f383d42ae968fea6e9f16b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2008954400
 PrefabInstance:
   m_ObjectHideFlags: 0

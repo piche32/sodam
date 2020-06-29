@@ -49,29 +49,30 @@ public class PlayerScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
             if (isHit == true) return;
             dataScript.HP -= 10;
             SoundManagerScript.instance.attackedSoundCtrl();
             isHit = true;
-            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
         }
 
         if (collision.gameObject.tag == "StopEnemy")
         {
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
             if (isHit == true) return;
             dataScript.HP -= 15;
             SoundManagerScript.instance.attackedSoundCtrl();
             isHit = true;
-            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
         }
 
         if (collision.gameObject.tag == "ReserveEnemy")
         {
+            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
+
             if (isHit == true) return;
             dataScript.HP -= 20;
             SoundManagerScript.instance.attackedSoundCtrl();
             isHit = true;
-            collision.collider.isTrigger = true; //"Enemy가 player에 닿으면 trigger로 변경되어 player가 뚫고 지나감
         }
     }
     
@@ -110,8 +111,14 @@ public class PlayerScript : MonoBehaviour
     void isUnbeatable()
     {
         if (isHit == false) return;
-        if (timer <= 0.0f) isHit = false;
-        timer--;
+        Debug.Log("unbeatable");
+        if (timer <= 0.0f) {
+            isHit = false;
+            timer = 5.0f;
+            gameObject.GetComponent<Animator>().SetBool("isHit", isHit);
+        }
+        gameObject.GetComponent<Animator>().SetBool("isHit", isHit);
+        timer-= Time.deltaTime;
         
     }
 }
