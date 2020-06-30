@@ -122,6 +122,21 @@ public class UIManagerScript : MonoBehaviour
     public void quitBT()
     {
         isPause = false;
+        //SceneManager.LoadScene("Start");
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Application.Quit();
+            return;
+        }
+        else
+        {
+            SceneManager.LoadScene("Start");
+        }
+    }
+
+    public void XBT()
+    {
+        isPause = false;
         SceneManager.LoadScene("Start");
     }
 

@@ -26,7 +26,7 @@ public class MapManager : MonoBehaviour
     void StartStage()
     {
 
-        if (dataScript.stage == 1)
+        if (dataScript.stage == 5)
         {
             SceneManager.LoadScene("Ending");
         }

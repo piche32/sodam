@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\PortionScript.cs" />
     <Compile Include="Assets\Scripts\ResultScript.cs" />
     <Compile Include="Assets\Scripts\ReverseEnemy.cs" />
+    <Compile Include="Assets\Scripts\ScreenSizeScript.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
     <Compile Include="Assets\Scripts\StartScript.cs" />
     <Compile Include="Assets\Scripts\UIManagerScript.cs" />
