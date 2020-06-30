@@ -11,14 +11,8 @@ public class NextStage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (dataScript.stage == 5)
-            {
-                SceneManager.LoadScene("Ending");
-            }
-            else
-            {
                 _mapManager.GetComponent<MapManager>().NextStage();
-            }
+       
         }
     }
 }

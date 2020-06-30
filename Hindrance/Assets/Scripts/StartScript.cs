@@ -17,5 +17,13 @@ public class StartScript : MonoBehaviour
        if(Input.GetMouseButtonDown(0)){
             SceneManager.LoadScene("MainGame");
         }
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+                return;
+            }
+        }
     }
 }

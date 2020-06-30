@@ -27,6 +27,7 @@ public class UIManagerScript : MonoBehaviour
     {
        dataScript.Score = 0.0f;
         HPSlider.maxValue = dataScript.HPMax;
+        isPause = false;
     }
 
     // Update is called once per frame

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviour
 {
@@ -24,7 +25,12 @@ public class MapManager : MonoBehaviour
 
     void StartStage()
     {
-        for (int i = 1; i < Stage.Length; i++)
+
+        if (dataScript.stage == 1)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+            for (int i = 1; i < Stage.Length; i++)
         {
             if (i == dataScript.stage)
             {

@@ -25,9 +25,9 @@ public class CameraMoveScript : MonoBehaviour
     {
         pos = this.gameObject.transform.position;
         playerPos = player.gameObject.transform.position;
-        if (pos.x - playerPos.x < maxDistance) //최대 거리 안에서 움직이기 
+        if (pos.x - playerPos.x > maxDistance) //최대 거리 안에서 움직이기 
         {
-            pos.x += cameraSpeed;
+            pos.x -= cameraSpeed;
         }
 
         this.gameObject.transform.position = pos;
