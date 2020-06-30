@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextStage : MonoBehaviour
 {
@@ -8,9 +9,16 @@ public class NextStage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            _mapManager.GetComponent<MapManager>().NextStage();
+            if (dataScript.stage == 5)
+            {
+                SceneManager.LoadScene("Ending");
+            }
+            else
+            {
+                _mapManager.GetComponent<MapManager>().NextStage();
+            }
         }
     }
 }

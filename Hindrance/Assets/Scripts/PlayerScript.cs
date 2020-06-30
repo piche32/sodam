@@ -1,14 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerScript : MonoBehaviour
 {
-    [SerializeField] float speed = 0.03f; //나중에 시간이 오래 지날수록 늘리기
     [SerializeField] float jumpPower = 400.0f;
 
     float timer;
     bool isHit = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,20 +20,12 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     private void FixedUpdate()
     {
-        move();
         isPlayerAlive();
         isUnbeatable();
-    }
-
-
-    private void move() //앞으로 움직이기
-    {
-        gameObject.transform.Translate(new Vector3(speed, 0.0f, 0.0f));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -79,13 +73,18 @@ public class PlayerScript : MonoBehaviour
     public void stopBtDown()
     {
         //stop 버튼 눌렀을 때 정지
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
     }
 
     public void stopBtUp()
     {
         //stop 버튼을 떼면 무조건 떨어짐.. 중력만 받아서 그런듯(수정??)
-        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
     }
 
     public void reverseBtDown()
